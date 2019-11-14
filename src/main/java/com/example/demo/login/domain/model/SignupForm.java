@@ -20,32 +20,32 @@ import lombok.Data;
 public class SignupForm {
 
     //必須入力、メールアドレス形式
-    @NotBlank
-    @Email
+    @NotBlank(groups=ValidGroup1.class)
+    @Email(groups=ValidGroup2.class)
     private String userId;
 
     //必須入力、長さ4から100桁までの半角英数のみ
-    @NotBlank
-    @Length(min=4,max=100)
-    @Pattern(regexp="^[a-zA-Z0-9]+$")
+    @NotBlank(groups=ValidGroup1.class)
+    @Length(min=4,max=100,groups=ValidGroup2.class)
+    @Pattern(regexp="^[a-zA-Z0-9]+$",groups=ValidGroup3.class)
     private String password;
 
     //必須入力
-    @NotBlank
+    @NotBlank(groups=ValidGroup1.class)
     private String userName;
 
     //ポイント@DateTimeFormat
     //必須入力
-    @NotNull
+    @NotNull(groups=ValidGroup1.class)
     @DateTimeFormat(pattern="yyyy/MM/dd")
     private Date birthday;
 
     //値が20から100
-    @Min(20)
-    @Max(100)
+    @Min(value=20,groups=ValidGroup2.class)
+    @Max(value=100,groups=ValidGroup2.class)
     private int age;
 
     //false飲み可能
-    @AssertFalse
+    @AssertFalse(groups=ValidGroup2.class)
     private boolean marriage;
 }
