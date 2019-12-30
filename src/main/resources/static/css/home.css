@@ -1,0 +1,22 @@
+body {
+	padding-top:50px;
+}
+
+.sidebar{
+    position :fiixed;
+    display:block;
+    top:50px;
+    bottom:0;
+    background-color:#F4F5F7;
+}
+
+.main{
+    positon :ficed;
+    display:block;
+    topp:0px;
+    bottom:0;
+}
+
+.page-header{
+    margin-top:0px;
+}
