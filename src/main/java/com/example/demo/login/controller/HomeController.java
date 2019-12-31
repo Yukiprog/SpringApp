@@ -17,8 +17,8 @@ public class HomeController {
     @GetMapping("/home")
     public String getHome(Model model) {
         //コンテンツ部分にユーザー一覧を表示するための文字列を登録
-        model.addAttribute("conetnts","login/home :: home_contents");
-        return "/login/homeLayout";
+        model.addAttribute("contents","login/home :: home_contents");
+        return "login/homeLayout";
     }
     //ログアウト用メソッド
     @PostMapping("/logout")
